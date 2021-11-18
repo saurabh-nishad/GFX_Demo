@@ -1,0 +1,10 @@
+Note: Different from the traditional SPI protocol, the data line from the slave to the master is hidden since the device only has display requirement.
+RESX Is the reset pin, it should be low when powering the module and be higher at other times;;
+CSX is slave chip select, when CS is low, the chip is enabled.
+D/CX is data/command control pin, when DC = 0, write command, when DC = 1, write data
+SDA is the data pin for transmitting RGB data, it works as the MOSI pin of SPI interface;
+SCL worka s the SCLK pins of SPI interface.
+SPI communication has data transfer timing, which is combined by CPHA and CPOL.
+CPOL determines the level of the serial synchronous clock at idle state. When CPOL = 0, the level is Low. However, CPOL has little effect to the transmission.
+CPHA determines whether data is collected at the first clock edge or at the second clock edge of serial synchronous clock; when CPHL = 0, data is collected at the first clock edge.
+There are 4 SPI communication modes. SPI0 is commonly used, in which CPHL = 0, CPOL = 0.
